@@ -3,15 +3,12 @@
 
 void main() {
     clear_screen();
-
-    int i = 0;
-    for (i = 0; i < 24; i++)
-    {
-        char str[255];
-        int_to_ascii(i, str);
-        kprint_at(str, 0, i);
-    }
-
-    kprint_at("This text forces the kernel to scroll. Row 0 will disappear. ", 60, 24);
-    kprint("And with this text, the kernel will scroll again, and row 1 will disappear too!");
-}
+    kprint("dP                                                      .88888.  .d88888b\n");
+    kprint("88                                                     d8\'   `8b 88.    \"'\n");
+    kprint("88        .d8888b. .d8888b. .d8888b. 88d888b.          88     88 `Y88888b. \n");
+    kprint("88        88'  `88 88'  `88 88'  `88 88'  `88 88888888 88     88       `8b \n");
+    kprint("88        88.  .88 88.  .88 88.  .88 88    88          Y8.   .8P d8'   .8P\n");
+    kprint("88888888P `88888P' `8888P88 `88888P8 dP    dP           `8888P'   Y88888P  \n");
+    kprint("oooooooooooooooooooo~~~~.88~ooooooooooooooooooooooooooooooooooooooooooooooo\n");
+    kprint("                    d8888P\n");
+} 
