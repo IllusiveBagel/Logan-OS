@@ -3,11 +3,13 @@
 
 #include "types.h"
 
+/* Segment selectors */
 #define KERNEL_CS 0x08
 
+/* How every interrupt gate (handler) is defined */
 typedef struct {
-    u16 low_offset;
-    u16 sel;
+    u16 low_offset; /* Lower 16 bits of handler function address */
+    u16 sel; /* Kernel segment selector */
     u8 always0;
     /* First byte
      * Bit 7: "Interrupt is present"
