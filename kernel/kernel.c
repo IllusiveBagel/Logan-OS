@@ -3,15 +3,16 @@
 #include "kernel.h"
 #include "../libc/string.h"
 #include "../libc/mem.h"
+#include <stdint.h>
 
-void main() 
+void kernel_main() 
 {
     isr_install();
     irq_install();
 
     clear_screen();
     kprint("dP                                                      .88888.  .d88888b\n");
-    kprint("88                                                     d8\'   `8b 88.    \"'\n");
+    kprint("88                                                     d8'   `8b 88.    \"'\n");
     kprint("88        .d8888b. .d8888b. .d8888b. 88d888b.          88     88 `Y88888b. \n");
     kprint("88        88'  `88 88'  `88 88'  `88 88'  `88 88888888 88     88       `8b \n");
     kprint("88        88.  .88 88.  .88 88.  .88 88    88          Y8.   .8P d8'   .8P\n");
@@ -27,8 +28,8 @@ void user_input(char *input) {
         asm volatile("hlt");
     } else if (strcmp(input, "PAGE") == 0) {
         /* Lesson 22: Code to test kmalloc, the rest is unchanged */
-        u32 phys_addr;
-        u32 page = kmalloc(1000, 1, &phys_addr);
+        uint32_t phys_addr;
+        uint32_t page = kmalloc(1000, 1, &phys_addr);
         char page_str[16] = "";
         hex_to_ascii(page, page_str);
         char phys_str[16] = "";
