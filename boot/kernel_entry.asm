@@ -1,4 +1,4 @@
-global_start;
+global _start;
 [bits 32]
 
 _start:
